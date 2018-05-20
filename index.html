@@ -3,9 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <title>我的主页</title>
+
+<style>
+	
+
+/*
+body 
+{
+	background-color:black;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+*/
+
+.bg{width: 100%;height: 100%;top:0;;z-index: -1; position: absolute;}
+.home{width: 100%;height: 100%;top:0;z-index: 1; position: absolute;}
+.home img{display: block;outline: none;border:0;height: 100%;width: auto;margin: 0 auto}
+.menu{
+  margin-bottom: 594px;
+  background: #fff; z-index: 999; position:relative;}
+ canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  background-color:black;
+}
+
+	
+a {
+  
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: calc( 100% - 200px );
+  top: calc( 100% - 130px );
+}
+	
+</style>
+
 </head>
 
 <body>
-<p><img src="img/home_bg.jpg" width="2000" height="1333" alt=""/></p>
+<div class="bg"><canvas id="c"/></div>
+
+<div class="home">
+<img src="img/home.jpg" alt=""/>
+</div>
+
+<div class="menu">
+<a href="/index.html" >本文本</a>
+</div>
+ 
+  <script src="js/dat.gui.min.js"></script>
+
+  <script src="js/index.js"></script>
+
 </body>
 </html>
