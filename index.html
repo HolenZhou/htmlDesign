@@ -3,60 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <title>我的主页</title>
-
 <style>
-	
-
-/*
-body 
-{
-	background-color:black;
-	background-repeat:no-repeat;
-	background-position:center;
+body {
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif/*    font-family: "宋体";*/
 }
-*/
-
-.bg{width: 100%;height: 100%;top:0;;z-index: -1; position: absolute;}
-.home{width: 100%;height: 100%;top:0;z-index: 1; position: absolute;}
-.home img{display: block;outline: none;border:0;height: 100%;width: auto;margin: 0 auto}
-.menu{
-  margin-bottom: 594px;
-  background: #fff; z-index: 999; position:relative;}
- canvas{
-  position:absolute;
-  top:0;
-  left:0;
-  background-color:black;
+.bg {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	;
+	z-index: -1;
+	position: absolute;
 }
-
-	
+.home {
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 1;
+	position: absolute;
+}
+.home img {
+	display: block;
+	outline: none;
+	border: 0;
+	height: 100%;
+	width: auto;
+	margin: 0 auto
+}
+.menu {
+	display: none;
+/*	background: #ffffffff;*/
+	z-index: 999;
+	position: fixed;
+	width: 200px;
+	height: 300px;
+	left: 39.5%;
+	top: 42%
+}
+.menu font {
+	/*    color: #1b1b1b;*/
+	font-size: 1em;
+	text-align: left;
+	/*    letter-spacing: 2px;*/
+	/*    font-weight: 700;*/
+	margin-bottom: .7em;
+	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+	text-align: center;
+}
+.menu li {
+	margin-top: 6px
+}
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+}
 a {
-  
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  left: calc( 100% - 200px );
-  top: calc( 100% - 130px );
+	color: #1b1b1b;
+	text-decoration: none
 }
-	
+a:hover {
+	color: cadetblue;
+}
+/*a:visited {color: red}*/
+a:active {
+	color: skyblue;
+}
 </style>
-
 </head>
 
 <body>
-<div class="bg"><canvas id="c"/></div>
+<!--<div class="bg"><canvas id="c"/></div>-->
 
-<div class="home">
-<img src="img/home.jpg" alt=""/>
+<div class="home" id="div_home"> <img src="img/home.jpg" alt=""/> </div>
+<div class="menu" id="div_menu">
+  <ul>
+    <li><a href="http://www.baidu.com" ><font>理念&思想</font></a></li>
+    <li><a href="http://www.baidu.com" ><font>关于我</font></a></li>
+    <li><a href="http://www.baidu.com" ><font>纸上手绘</font></a></li>
+    <li><a href="http://www.baidu.com" ><font>电脑手绘</font></a></li>
+    <li><a href="http://www.baidu.com" ><font>摄影作品</font></a></li>
+    <li><a href="http://www.baidu.com" ><font>时尚</font></a></li>
+  </ul>
 </div>
 
-<div class="menu">
-<a href="/index.html" >本文本</a>
-</div>
- 
-  <script src="js/dat.gui.min.js"></script>
-
-  <script src="js/index.js"></script>
-
+<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script> 
+<script>
+$(document).ready(function(){
+    $("#div_home").fadeIn(2000);
+	$("#div_menu").fadeIn(2000);
+});
+</script>
 </body>
 </html>
