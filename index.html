@@ -14,7 +14,6 @@ body {
 	width: 100%;
 	height: 100%;
 	top: 0;
-	;
 	z-index: -1;
 	position: absolute;
 }
@@ -36,33 +35,34 @@ body {
 }
 .menu {
 	display: none;
-/*	background: #ffffffff;*/
+	/*	background:red;*/
 	z-index: 999;
 	position: fixed;
-	width: 200px;
-	height: 300px;
-	left: 39.5%;
+	width: auto;
+	height: auto;
 	top: 42%
 }
 .menu font {
-	/*    color: #1b1b1b;*/
-	font-size: 1em;
+	color: #1b1b1b;
+	font-size: 0.8vw;
 	text-align: left;
 	/*    letter-spacing: 2px;*/
 	/*    font-weight: 700;*/
-	margin-bottom: .7em;
+/*	margin-bottom: .7em;*/
 	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 	text-align: center;
 }
 .menu li {
 	margin-top: 6px
 }
+/*
 canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
 	background-color: black;
 }
+*/
 a {
 	color: #1b1b1b;
 	text-decoration: none
@@ -80,23 +80,42 @@ a:active {
 <body>
 <!--<div class="bg"><canvas id="c"/></div>-->
 
-<div class="home" id="div_home"> <img src="img/home.jpg" alt=""/> </div>
-<div class="menu" id="div_menu">
-  <ul>
-    <li><a href="http://www.baidu.com" ><font>理念&思想</font></a></li>
-    <li><a href="http://www.baidu.com" ><font>关于我</font></a></li>
-    <li><a href="http://www.baidu.com" ><font>纸上手绘</font></a></li>
-    <li><a href="http://www.baidu.com" ><font>电脑手绘</font></a></li>
-    <li><a href="http://www.baidu.com" ><font>摄影作品</font></a></li>
-    <li><a href="http://www.baidu.com" ><font>时尚</font></a></li>
-  </ul>
+<div class="home" id="div_home"> <img src="img/home.jpg" alt="" id="home_img"/>
+  <div class="menu" id="div_menu">
+    <ul>
+      <li><a href="http://www.baidu.com" ><font>理念&思想</font></a></li>
+      <li><a href="http://www.baidu.com" ><font>关于我</font></a></li>
+      <li><a href="http://www.baidu.com" ><font>纸上手绘</font></a></li>
+      <li><a href="http://www.baidu.com" ><font>电脑手绘</font></a></li>
+      <li><a href="http://www.baidu.com" ><font>摄影作品</font></a></li>
+      <li><a href="http://www.baidu.com" ><font>时尚</font></a></li>
+    </ul>
+  </div>
 </div>
-
 <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script> 
 <script>
 $(document).ready(function(){
     $("#div_home").fadeIn(2000);
 	$("#div_menu").fadeIn(2000);
+	
+//	setTimeout(function(){
+////		alert("w: " + left)
+//	}, 0)
+	
+		var left = $("#home_img").offset().left
+		var width = $("#home_img").width()
+		var lMargin = left + width * 0.15
+//		alert("w: " + width)
+		document.getElementById("div_menu").style.marginLeft = lMargin + 'px'
+	
+});
+	
+$(window).resize(function() {
+		var left = $("#home_img").offset().left
+		var width = $("#home_img").width()
+		var lMargin = left + width * 0.15
+//		console.log("left", left)
+		document.getElementById("div_menu").style.marginLeft = lMargin + 'px'
 });
 </script>
 </body>
