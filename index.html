@@ -43,7 +43,6 @@ body {
 	top: 42%
 }
 .menu font {
-	color: #1b1b1b;
 	font-size: 0.8vw;
 	text-align: left;
 	/*    letter-spacing: 2px;*/
@@ -98,15 +97,15 @@ $(document).ready(function(){
     $("#div_home").fadeIn(2000);
 	$("#div_menu").fadeIn(2000);
 	
-//	setTimeout(function(){
-////		alert("w: " + left)
-//	}, 0)
+	setTimeout(function(){
 	
 		var left = $("#home_img").offset().left
 		var width = $("#home_img").width()
 		var lMargin = left + width * 0.15
 //		alert("w: " + width)
 		document.getElementById("div_menu").style.marginLeft = lMargin + 'px'
+//		alert("w: " + left)
+	}, 200)
 	
 });
 	
