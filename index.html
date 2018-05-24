@@ -8,7 +8,8 @@ body {
 	background-color: white;
 	background-repeat: no-repeat;
 	background-position: center;
-	font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif/*    font-family: "宋体";*/
+/*	font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif*/
+	font-family: "宋体"
 }
 .bg {
 	width: 100%;
@@ -42,16 +43,7 @@ body {
 	height: auto;
 	top: 42%
 }
-.menu font {
-	font-size: 0.8vw;
-	text-align: left;
-	/*    letter-spacing: 2px;*/
-	/*    font-weight: 700;*/
-/*	margin-bottom: .7em;*/
-	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-	text-align: center;
-}
-.menu li {
+ul li {
 	margin-top: 6px
 }
 /*
@@ -61,7 +53,8 @@ canvas {
 	left: 0;
 	background-color: black;
 }
-*/
+	
+	
 a {
 	color: #1b1b1b;
 	text-decoration: none
@@ -69,29 +62,59 @@ a {
 a:hover {
 	color: cadetblue;
 }
-/*a:visited {color: red}*/
+a:visited {color: red}
 a:active {
 	color: skyblue;
 }
+*/
+	
+		a{
+			font-size: 0.8vw;
+			position: relative;
+			color:#555;
+			text-decoration: none;	
+			padding-bottom: 2px
+		}
+	
+		a:hover {
+		    color: cadetblue;
+		}
+		a:hover::before {
+		    max-width: 100%;
+		}
+		a::before{
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		    overflow:hidden;
+		    max-width: 0;
+		    height: 80%;
+		    border-bottom: 2px solid cadetblue;
+		    color: cadetblue;
+		    content: attr(data-hover);
+		    -webkit-transition: max-width 0.4s;
+		    -moz-transition: max-width 0.4s;
+		    transition: max-width 0.4s;
+		}
 </style>
 </head>
 
 <body>
 <!--<div class="bg"><canvas id="c"/></div>-->
 
-<div class="home" id="div_home"> <img src="img/home.jpg" alt="" id="home_img"/>
+<div class="home" id="div_home"> <img src="images/home.jpg" alt="" id="home_img"/>
   <div class="menu" id="div_menu">
     <ul>
-      <li><a href="http://www.baidu.com" ><font>理念&思想</font></a></li>
-      <li><a href="http://www.baidu.com" ><font>关于我</font></a></li>
-      <li><a href="http://www.baidu.com" ><font>纸上手绘</font></a></li>
-      <li><a href="http://www.baidu.com" ><font>电脑手绘</font></a></li>
-      <li><a href="http://www.baidu.com" ><font>摄影作品</font></a></li>
-      <li><a href="http://www.baidu.com" ><font>时尚</font></a></li>
+      <li><a href="idea.html" data-hover="理念&思想">理念&思想</a></li>
+      <li><a href="about.html" data-hover="关于我"><font>关于我</font></a></li>
+      <li><a href="paper.html" data-hover="纸上手绘"><font>纸上手绘</font></a></li>
+      <li><a href="computer.html" data-hover="电脑手绘"><font>电脑手绘</font></a></li>
+      <li><a href="photo.html" data-hover="摄影作品"><font>摄影作品</font></a></li>
+      <li><a href="fashion.html" data-hover="时尚"><font>时尚</font></a></li>
     </ul>
   </div>
 </div>
-<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script> 
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> 
 <script>
 $(document).ready(function(){
     $("#div_home").fadeIn(2000);
